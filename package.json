@@ -10,6 +10,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
+    "vitepress-plugin-51la": "^0.1.0",
     "vitepress-plugin-rss": "^0.3.0"
   }
 }

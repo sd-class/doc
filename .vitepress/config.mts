@@ -1,6 +1,7 @@
 import { DefaultTheme, defineConfig } from "vitepress";
 import { withI18n } from "vitepress-i18n";
 import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
+import { La51Plugin } from "vitepress-plugin-51la";
 
 const RSS: RSSOptions = {
   title: "sd-class 文档",
@@ -31,7 +32,15 @@ const RSS: RSSOptions = {
 export default defineConfig(
   withI18n({
     vite: {
-      plugins: [RssPlugin(RSS)],
+      plugins: [
+        RssPlugin(RSS),
+        La51Plugin({
+          id: "3KhSqiNoRBw5iG2W",
+          ck: "3KhSqiNoRBw5iG2W",
+          autoTrack: true,
+          importMode: "async",
+        }),
+      ],
     },
     srcDir: "docs",
     lastUpdated: true,
