@@ -3,8 +3,7 @@
 layout: home
 hero:
   name: "sd 课堂"
-  text: "校园一体化学习平台"
-  tagline: 这是一个知新课堂 + 百度网盘 + 钉钉 + 远志的大成体
+  tagline: "教学管理、云端文档、机房控制一体化教育解决方案."
   actions:
     - theme: brand
       text: 快速开始
@@ -14,7 +13,7 @@ hero:
       link: /guide/roadmap
 features:
   - title: 数据安全
-    details: 所以的数据将会保存在各个学校的自建服务器上，不会泄露给任何第三方
+    details: 所有的数据将会保存在各个学校的自建服务器上，不会泄露给任何第三方
   - title: 高性能
     details: 后端使用高性能的 go 语言，客户端使用高性能的 tauri 框架
   - title: 稳定性
@@ -22,7 +21,7 @@ features:
 ---
 
 <script setup>
-import { VPTeamMembers } from 'vitepress/theme'
+import { VPTeamMembers } from 'vitepress/theme';
 
 const members = [
   {
@@ -42,10 +41,11 @@ const members = [
     name: 'lfcypo',
     title: '创造者',
     desc: 'sd-class 的创造者，负责后端开发',
-    org: '糖方科技',
-    orgLink: 'https://www.candyrect.com/',
+    org: 'sd-class',
+    orgLink: 'https://github.com/sd-class',
     links: [
       { icon: 'github', link: 'https://github.com/lfcypo' },
+      { icon: 'bilibili', link: 'https://space.bilibili.com/1265473007' },
     ]
   },
 ]
