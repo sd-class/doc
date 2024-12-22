@@ -78,6 +78,14 @@ export default defineConfig(
               { text: "快速开始", link: "/guide/getting-started" },
             ],
           },
+          {
+            text: "API",
+            link: "/api/",
+          },
+          {
+            text: "示例",
+            link: "/examples/",
+          },
         ],
       },
       en: {
@@ -96,6 +104,14 @@ export default defineConfig(
               { text: "Roadmap", link: "/en/guide/roadmap" },
               { text: "Getting Started", link: "/en/guide/getting-started" },
             ],
+          },
+          {
+            text: "API",
+            link: "/en/api/",
+          },
+          {
+            text: "Examples",
+            link: "/en/examples/",
           },
         ],
       },
