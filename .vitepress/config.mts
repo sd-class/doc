@@ -1,27 +1,49 @@
 import { DefaultTheme, defineConfig } from "vitepress";
 import { withI18n } from "vitepress-i18n";
+import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
+
+const RSS: RSSOptions = {
+  title: "sd-class 文档",
+  baseUrl: "https://sd-class.s121.top",
+  copyright: "Copyright © 2024-present share121",
+  description: "sd 课堂的文档",
+  language: "zh-CN",
+  icon: true,
+  authors: [
+    {
+      name: "share121",
+      email: "2854631158@qq.com",
+      link: "https://github.com/share121",
+    },
+    {
+      name: "lfcypo",
+      email: "lfcypo@gmail.com",
+      link: "https://github.com/lfcypo",
+    },
+  ],
+  filename: "feed.rss",
+  log: true,
+  ignoreHome: true,
+  ignorePublish: false,
+};
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig(
   withI18n({
-    description: "sd 课堂的文档",
-
+    vite: {
+      plugins: [RssPlugin(RSS)],
+    },
     srcDir: "docs",
-
     lastUpdated: true,
-
     themeConfig: {
-      // footer: {
-      //   message: "Released under the MIT License.",
-      //   copyright: "Copyright © 2019-present share121",
-      // },
-
+      footer: {
+        message: "Released under the MIT License.",
+        copyright: "Copyright © 2024-present share121",
+      },
       externalLinkIcon: true,
-
       editLink: {
         pattern: "https://github.com/sd-class/doc/edit/main/docs/:path",
       },
-
       socialLinks: [
         { icon: "github", link: "https://github.com/sd-class/doc" },
       ],
@@ -33,6 +55,10 @@ export default defineConfig(
     title: {
       zhHans: "sd 课堂",
       en: "sd-class",
+    },
+    description: {
+      zhHans: "sd 课堂的文档",
+      en: "sd-class document",
     },
     themeConfig: {
       zhHans: {
