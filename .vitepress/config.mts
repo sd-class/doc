@@ -6,7 +6,7 @@ import { La51Plugin } from "vitepress-plugin-51la";
 const RSS: RSSOptions = {
   title: "sd-class 文档",
   baseUrl: "https://sd-class.s121.top",
-  copyright: "Copyright © 2024-present share121",
+  copyright: "Copyright © 2024-present sd-class team",
   description: "sd 课堂的文档",
   language: "zh-CN",
   icon: true,
@@ -47,7 +47,7 @@ export default defineConfig(
     themeConfig: {
       footer: {
         message: "Released under the MIT License.",
-        copyright: "Copyright © 2024-present share121",
+        copyright: "Copyright © 2024-present sd-class team",
       },
       externalLinkIcon: true,
       editLink: {
