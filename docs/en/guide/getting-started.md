@@ -1,3 +1,3 @@
-# 快速开始
+# Getting Started
 
 待完成

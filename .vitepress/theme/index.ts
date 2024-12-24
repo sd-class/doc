@@ -1,5 +1,6 @@
 import DefaultTheme from "vitepress/theme";
 import MyLayout from "./MyGiscus.vue";
+import "./custom.css";
 
 export default {
   extends: DefaultTheme,

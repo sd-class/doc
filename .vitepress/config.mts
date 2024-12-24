@@ -3,9 +3,27 @@ import { withI18n } from "vitepress-i18n";
 import { RssPlugin } from "vitepress-plugin-rss";
 import { La51Plugin } from "vitepress-plugin-51la";
 import { withMermaid } from "vitepress-plugin-mermaid";
-import { VitePressI18nOptions } from "vitepress-i18n/types";
+import { withSidebar } from "vitepress-sidebar";
 import rssOptions from "./rss.mts";
-import i18nOptions from "./i18n.mts";
+import { i18nOptions, rootLocale, supportedLocales } from "./i18n.mts";
+
+const commonSidebarConfigs = {
+  collapsed: true,
+  useTitleFromFileHeading: true,
+  useTitleFromFrontmatter: true,
+  useFolderTitleFromIndexFile: true,
+  useFolderLinkFromIndexFile: true,
+};
+const vitePressSidebarOptions = [
+  ...supportedLocales.map((lang) => {
+    return {
+      ...commonSidebarConfigs,
+      ...(rootLocale === lang ? {} : { basePath: `/${lang}/` }), // If using `rewrites` option
+      documentRootPath: `/docs/${lang}`,
+      resolvePath: rootLocale === lang ? "/" : `/${lang}/`,
+    };
+  }),
+];
 
 const vitepressOptions: UserConfig = {
   markdown: {
@@ -23,6 +41,9 @@ const vitepressOptions: UserConfig = {
         importMode: "async",
       }),
     ],
+  },
+  rewrites: {
+    "zhHans/:rest*": ":rest*",
   },
   srcDir: "docs",
   lastUpdated: true,
@@ -43,8 +64,11 @@ const vitepressOptions: UserConfig = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig(
-  withI18n(
-    withMermaid(vitepressOptions),
-    i18nOptions,
+  withSidebar(
+    withI18n(
+      withMermaid(vitepressOptions),
+      i18nOptions,
+    ),
+    vitePressSidebarOptions,
   ),
 );
