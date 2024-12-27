@@ -24,9 +24,24 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13
     devDependencies:
+      '@braintree/sanitize-url':
+        specifier: ^7.1.1
+        version: 7.1.1
       '@types/node':
         specifier: ^22.10.2
         version: 22.10.2
+      cytoscape:
+        specifier: ^3.30.4
+        version: 3.30.4
+      cytoscape-cose-bilkent:
+        specifier: ^4.1.0
+        version: 4.1.0(cytoscape@3.30.4)
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
+      debug:
+        specifier: ^4.4.0
+        version: 4.4.0
       mermaid:
         specifier: ^11.4.1
         version: 11.4.1

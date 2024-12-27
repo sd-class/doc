@@ -31,6 +31,7 @@ const vitepressOptions: UserConfig = {
       lazyLoading: true,
     },
   },
+  cleanUrls: true,
   vite: {
     plugins: [
       RssPlugin(rssOptions),
