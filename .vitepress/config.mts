@@ -3,10 +3,10 @@ import { withI18n } from "vitepress-i18n";
 import { RssPlugin } from "vitepress-plugin-rss";
 import { La51Plugin } from "vitepress-plugin-51la";
 import { withMermaid } from "vitepress-plugin-mermaid";
-import { withSidebar } from "vitepress-sidebar";
 import rssOptions from "./rss.mts";
 import { i18nOptions } from "./i18n.mts";
-import { vitePressSidebarOptions } from "./sidebar.mts";
+import { genSidebar, reg as orderFileNameReg } from "./sidebar.mts";
+import path from "path";
 
 const vitepressOptions: UserConfig = {
   markdown: {
@@ -17,6 +17,20 @@ const vitepressOptions: UserConfig = {
   title: "sd 课堂",
   description: "sd 课堂的文档",
   cleanUrls: true,
+  rewrites(id) {
+    return id.split("/").map((item, index, arr) => {
+      if (index === arr.length - 1) {
+        // 这是文件
+        const ext = path.extname(item);
+        if (ext !== ".md") return item;
+        const basename = path.basename(item, ext);
+        return basename.replace(orderFileNameReg, "") + ".md";
+      } else {
+        // 这是文件夹
+        return item.replace(orderFileNameReg, "");
+      }
+    }).join("/");
+  },
   vite: {
     plugins: [
       RssPlugin(rssOptions),
@@ -38,6 +52,7 @@ const vitepressOptions: UserConfig = {
       { text: "API", link: "/api/" },
       { text: "示例", link: "/examples/" },
     ],
+    sidebar: genSidebar(),
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2024-present sd-class team",
@@ -54,11 +69,8 @@ const vitepressOptions: UserConfig = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig(
-  withSidebar(
-    withI18n(
-      withMermaid(vitepressOptions),
-      i18nOptions,
-    ),
-    vitePressSidebarOptions,
+  withI18n(
+    withMermaid(vitepressOptions),
+    i18nOptions,
   ),
 );

@@ -25,12 +25,12 @@ watch(isDark, (dark) => {
       <div style="margin-top: 24px">
         <Giscus
           :key="page.filePath"
-          repo="sd-class/doc"
+          repo="sd-class/document"
           repo-id="R_kgDONgM5eQ"
           category="Announcements"
           category-id="DIC_kwDONgM5ec4Clbmj"
           mapping="pathname"
-          strict="0"
+          strict="1"
           reactions-enabled="1"
           emit-metadata="0"
           input-position="top"
