@@ -59,10 +59,10 @@ const vitepressOptions: UserConfig = {
     },
     externalLinkIcon: true,
     editLink: {
-      pattern: "https://github.com/tp-class/document/edit/main/docs/:path",
+      pattern: "https://github.com/trpure-class/document/edit/main/docs/:path",
     },
     socialLinks: [
-      { icon: "github", link: "https://github.com/tp-class/document" },
+      { icon: "github", link: "https://github.com/trpure-class/document" },
     ],
   },
 };

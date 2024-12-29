@@ -30,7 +30,7 @@ const members = [
     title: '创造者',
     desc: '三清课堂的创造者，负责前端开发',
     org: '三清课堂',
-    orgLink: 'https://github.com/tp-class',
+    orgLink: 'https://github.com/trpure-class',
     links: [
       { icon: 'github', link: 'https://github.com/share121' },
       { icon: 'bilibili', link: 'https://space.bilibili.com/626843261' },
@@ -42,7 +42,7 @@ const members = [
     title: '创造者',
     desc: '三清课堂的创造者，负责后端开发',
     org: '三清课堂',
-    orgLink: 'https://github.com/tp-class',
+    orgLink: 'https://github.com/trpure-class',
     links: [
       { icon: 'github', link: 'https://github.com/lfcypo' },
       { icon: 'bilibili', link: 'https://space.bilibili.com/1265473007' },

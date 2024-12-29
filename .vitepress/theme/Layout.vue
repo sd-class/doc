@@ -25,7 +25,7 @@ watch(isDark, (dark) => {
       <div style="margin-top: 24px">
         <Giscus
           :key="page.filePath"
-          repo="tp-class/document"
+          repo="trpure-class/document"
           repo-id="R_kgDONgM5eQ"
           category="Announcements"
           category-id="DIC_kwDONgM5ec4Clbmj"
