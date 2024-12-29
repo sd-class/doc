@@ -3,11 +3,11 @@
 layout: home
 hero:
   name: "三清课堂"
-  tagline: "教学管理、云端文档、机房控制一体化教育解决方案."
+  tagline: "教学管理、云端文档、机房控制一体化教育解决方案"
   actions:
     - theme: brand
-      text: 快速开始
-      link: /guide/getting-started
+      text: 介绍
+      link: /guide/introduction
     - theme: alt
       text: 发展规划
       link: /guide/roadmap

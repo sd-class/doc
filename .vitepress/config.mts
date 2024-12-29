@@ -7,11 +7,25 @@ import rssOptions from "./rss.mts";
 import { i18nOptions } from "./i18n.mts";
 import { genSidebar, reg as orderFileNameReg } from "./sidebar.mts";
 import path from "path";
+import footnote from "markdown-it-footnote";
+import sub from "markdown-it-sub";
+import sup from "markdown-it-sup";
+import deflist from "markdown-it-deflist";
+import abbr from "markdown-it-abbr";
+import ins from "markdown-it-ins";
+import mark from "markdown-it-mark";
 
 const vitepressOptions: UserConfig = {
   markdown: {
     image: {
       lazyLoading: true,
+    },
+    lineNumbers: true,
+    math: true,
+    config: (md) => {
+      md.use(footnote).use(mark).use(sub).use(sup).use(ins).use(abbr).use(
+        deflist,
+      );
     },
   },
   title: "三清课堂",
@@ -49,8 +63,6 @@ const vitepressOptions: UserConfig = {
     nav: [
       { text: "首页", link: "/" },
       { text: "指南", link: "/guide/" },
-      { text: "API", link: "/api/" },
-      { text: "示例", link: "/examples/" },
     ],
     sidebar: genSidebar(),
     footer: {

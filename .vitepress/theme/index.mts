@@ -11,8 +11,26 @@ export default {
   Layout: MyLayout,
   setup() {
     const route = useRoute();
-    const initRoom = () =>
+    const initRoom = () => {
       mediumZoom(".main img", { background: "var(--vp-c-bg)" });
+      let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLSpanElement).style.animationDuration = Math
+              .min(
+                Math.max((entry.target.textContent || "").length * 0.05, 0.3),
+                2,
+              ) +
+              "s";
+            entry.target.classList.add("highlight");
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      document.querySelectorAll("mark").forEach((mark) => {
+        observer.observe(mark);
+      });
+    };
     onMounted(initRoom);
     watch(() => route.path, () => nextTick(initRoom));
   },
