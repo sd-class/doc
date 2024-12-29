@@ -2,7 +2,7 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 hero:
-  name: "sd 课堂"
+  name: "三清课堂"
   tagline: "教学管理、云端文档、机房控制一体化教育解决方案."
   actions:
     - theme: brand
@@ -28,9 +28,9 @@ const members = [
     avatar: 'https://www.github.com/share121.png',
     name: 'share121',
     title: '创造者',
-    desc: 'sd-class 的创造者，负责前端开发',
-    org: 'sd-class',
-    orgLink: 'https://github.com/sd-class',
+    desc: '三清课堂的创造者，负责前端开发',
+    org: '三清课堂',
+    orgLink: 'https://github.com/tp-class',
     links: [
       { icon: 'github', link: 'https://github.com/share121' },
       { icon: 'bilibili', link: 'https://space.bilibili.com/626843261' },
@@ -40,9 +40,9 @@ const members = [
     avatar: 'https://www.github.com/lfcypo.png',
     name: 'lfcypo',
     title: '创造者',
-    desc: 'sd-class 的创造者，负责后端开发',
-    org: 'sd-class',
-    orgLink: 'https://github.com/sd-class',
+    desc: '三清课堂的创造者，负责后端开发',
+    org: '三清课堂',
+    orgLink: 'https://github.com/tp-class',
     links: [
       { icon: 'github', link: 'https://github.com/lfcypo' },
       { icon: 'bilibili', link: 'https://space.bilibili.com/1265473007' },

@@ -9,3 +9,7 @@
 .medium-zoom-image--opened {
   z-index: 999;
 }
+
+html {
+  overflow-y: scroll;
+}

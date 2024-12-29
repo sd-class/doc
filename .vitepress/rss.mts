@@ -1,10 +1,10 @@
 import { RSSOptions } from "vitepress-plugin-rss";
 
 const RssOptions: RSSOptions = {
-  title: "sd-class 文档",
-  baseUrl: "https://sd-class.s121.top",
-  copyright: "Copyright © 2024-present sd-class team",
-  description: "sd 课堂的文档",
+  title: "三清课堂",
+  baseUrl: "https://tp-class.s121.top",
+  copyright: "Copyright © 2024-present 三清课堂 team",
+  description: "三清课堂的文档",
   language: "zh-CN",
   icon: true,
   authors: [

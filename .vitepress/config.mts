@@ -14,8 +14,8 @@ const vitepressOptions: UserConfig = {
       lazyLoading: true,
     },
   },
-  title: "sd 课堂",
-  description: "sd 课堂的文档",
+  title: "三清课堂",
+  description: "三清课堂的文档",
   cleanUrls: true,
   rewrites(id) {
     return id.split("/").map((item, index, arr) => {
@@ -55,14 +55,14 @@ const vitepressOptions: UserConfig = {
     sidebar: genSidebar(),
     footer: {
       message: "Released under the MIT License.",
-      copyright: "Copyright © 2024-present sd-class team",
+      copyright: "Copyright © 2024-present 三清课堂 team",
     },
     externalLinkIcon: true,
     editLink: {
-      pattern: "https://github.com/sd-class/doc/edit/main/docs/:path",
+      pattern: "https://github.com/tp-class/document/edit/main/docs/:path",
     },
     socialLinks: [
-      { icon: "github", link: "https://github.com/sd-class/doc" },
+      { icon: "github", link: "https://github.com/tp-class/document" },
     ],
   },
 };
