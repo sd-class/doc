@@ -23,27 +23,34 @@ const vitepressOptions: UserConfig = {
     lineNumbers: true,
     math: true,
     config: (md) => {
-      md.use(footnote).use(mark).use(sub).use(sup).use(ins).use(abbr).use(
-        deflist,
-      );
+      md.use(footnote)
+        .use(mark)
+        .use(sub)
+        .use(sup)
+        .use(ins)
+        .use(abbr)
+        .use(deflist);
     },
   },
   title: "三清课堂",
   description: "三清课堂的文档",
   cleanUrls: true,
   rewrites(id) {
-    return id.split("/").map((item, index, arr) => {
-      if (index === arr.length - 1) {
-        // 这是文件
-        const ext = path.extname(item);
-        if (ext !== ".md") return item;
-        const basename = path.basename(item, ext);
-        return basename.replace(orderFileNameReg, "") + ".md";
-      } else {
-        // 这是文件夹
-        return item.replace(orderFileNameReg, "");
-      }
-    }).join("/");
+    return id
+      .split("/")
+      .map((item, index, arr) => {
+        if (index === arr.length - 1) {
+          // 这是文件
+          const ext = path.extname(item);
+          if (ext !== ".md") return item;
+          const basename = path.basename(item, ext);
+          return basename.replace(orderFileNameReg, "") + ".md";
+        } else {
+          // 这是文件夹
+          return item.replace(orderFileNameReg, "");
+        }
+      })
+      .join("/");
   },
   vite: {
     plugins: [
@@ -81,8 +88,5 @@ const vitepressOptions: UserConfig = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig(
-  withI18n(
-    withMermaid(vitepressOptions),
-    i18nOptions,
-  ),
+  withI18n(withMermaid(vitepressOptions), i18nOptions),
 );

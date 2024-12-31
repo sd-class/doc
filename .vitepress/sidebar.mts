@@ -14,7 +14,10 @@ export const vitePressSidebarOptions: VitePressSidebarOptions = {
 };
 
 function rewrites(id: string) {
-  return id.split("/").map((item) => item.replace(reg, "")).join("/");
+  return id
+    .split("/")
+    .map((item) => item.replace(reg, ""))
+    .join("/");
 }
 
 function walk(sidebar: SidebarItem[]) {
